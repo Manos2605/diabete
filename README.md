@@ -1,12 +1,76 @@
-# React + Vite
+# Diabetes Predictor API
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Une application web pour prédire le risque de diabète à partir de données cliniques. Le projet comprend un **backend Flask** pour gérer les prédictions et un **frontend React** pour saisir les données et afficher les résultats.  
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🧰 Fonctionnalités
 
-## Expanding the ESLint configuration
+- Prédiction du diabète à partir de :
+  - Nombre de grossesses (`Pregnancies`)  
+  - Glycémie (`Glucose`)  
+  - Pression artérielle (`BloodPressure`)  
+  - Épaisseur du pli cutané (`SkinThickness`)  
+  - Insuline (`Insulin`)  
+  - Indice de masse corporelle (`BMI`)  
+  - Fonction héréditaire du diabète (`DiabetesPedigreeFunction`)  
+  - Âge (`Age`)  
+- API REST sécurisée avec **CORS** configuré pour React frontend.  
+- Modèle machine learning : **Random Forest** entraîné sur le dataset Pima Indians Diabetes.  
+- Déployé sur **PythonAnywhere** (backend) et **Vercel** (frontend).  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Technologies utilisées
+
+- **Backend** :
+  - Python 3.13  
+  - Flask  
+  - Pandas  
+  - Pydantic (validation des données)  
+  - Joblib (pour charger le modèle ML)  
+- **Frontend** :
+  - React.js (Vite)  
+  - Fetch API pour les requêtes HTTP  
+- **Machine Learning** :
+  - scikit-learn RandomForestClassifier  
+
+---
+
+## 🚀 Installation et exécution locale
+
+### Backend Flask
+
+1. Cloner le dépôt :  
+```bash
+git clone https://github.com/tonusername/diabetes-predictor.git
+cd diabetes-predictor/backend
+````
+2. Test rapide
+
+Tester l’API via navigateur ou Postman :
+```bash
+GET https://manos26052006.pythonanywhere.com/
+```
+
+Tester la prédiction :
+```bash
+POST https://manos26052006.pythonanywhere.com/predire
+```
+avec un JSON valide comme ci-dessus.
+```bash
+{
+  "resultats": {
+    "Age": 45.0,
+    "BMI": 33.6,
+    "BloodPressure": 62.0,
+    "DiabetesPedigreeFunction": 0.127,
+    "Glucose": 138.0,
+    "Insulin": 0.0,
+    "Pregnancies": 2,
+    "SkinThickness": 35.0,
+    "prediction": 1,
+    "probabilite_diabete": 0.85
+  }
+}
+```
