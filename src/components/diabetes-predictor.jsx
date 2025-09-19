@@ -41,7 +41,7 @@ const DiabetesPredictor = () => {
       Age: parseFloat(patientData.Age) || 0
     };
 
-    const response = await fetch("https://Manos26052006.pythonanywhere.com/predire", {
+    const response = await fetch("https://Manos26052006.pythonanywhere.com/predire_diabete", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
