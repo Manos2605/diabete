@@ -21,7 +21,7 @@ Une application web pour prédire le risque de diabète à partir de données cl
 
 ---
 
-## 🛠️ Technologies utilisées
+## Technologies utilisées
 
 - **Backend** :
   - Python 3.13  
