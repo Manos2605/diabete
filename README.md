@@ -4,7 +4,7 @@ Une application web pour prédire le risque de diabète à partir de données cl
 
 ---
 
-## 🧰 Fonctionnalités
+## Fonctionnalités
 
 - Prédiction du diabète à partir de :
   - Nombre de grossesses (`Pregnancies`)  
@@ -37,7 +37,7 @@ Une application web pour prédire le risque de diabète à partir de données cl
 
 ---
 
-## 🚀 Installation et exécution locale
+## Installation et exécution locale
 
 ### Backend Flask
 
